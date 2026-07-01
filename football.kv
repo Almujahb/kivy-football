@@ -1,0 +1,60 @@
+<Game>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'field.png'
+
+    Label:
+        text: root.score_text
+        font_size: 50
+        bold: True
+        color: 1, 1, 1, 1
+        outline_color: 0, 0, 0, 1
+        outline_width: 3
+        size_hint: None, None
+        size: self.texture_size
+        pos_hint: {'top': 0.98, 'center_x': 0.5} # Top center
+
+<Ball>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'ball.png'
+
+<Goalie>: # Enemy goalie = Red, Right side
+    canvas:
+        Color:
+            rgba: 1, 0.2, 0.2, 1 # Red tint
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'goalie.png'
+
+<GoalieLeft>: # Your goalie = Blue, Left side <- CHANGED NAME
+    canvas:
+        Color:
+            rgba: 0.2, 0.4, 1, 1 # Blue tint
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'goalie.png'
+
+<MyDefender>: # Blue team, Left half
+    canvas:
+        Color:
+            rgba: 0.2, 0.4, 1, 1 # Blue tint
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'defender.png'
+
+<EnemyDefender>: # Red team, Right half
+    canvas:
+        Color:
+            rgba: 1, 0.2, 0.2, 1 # Red tint
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'defender.png'
